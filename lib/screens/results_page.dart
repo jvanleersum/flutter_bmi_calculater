@@ -17,33 +17,30 @@ class ResultsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('BMI CALCULATOR'),
+        title: Text(
+          'BMI CALCULATOR',
+          style: TextStyle(fontFamily: "FrancoisOne", fontSize: 25),
+        ),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Expanded(
-            child: Container(
-              alignment: Alignment.centerLeft,
-              padding: EdgeInsets.all(15.0),
-              child: Text(
-                'Your Result',
-                style: TextStyle(
-                  fontSize: 50.0,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-          ),
-          Expanded(
-            flex: 5,
             child: ReusableCard(
               colour: kActiveCardColor,
               cardChild: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  Text(
+                    'Your Result',
+                    textAlign: TextAlign.left,
+                    style: TextStyle(
+                      fontSize: 35.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                   Text(
                     resultText,
                     style: kResultLabelTextStyle,
@@ -52,10 +49,13 @@ class ResultsPage extends StatelessWidget {
                     bmiResult,
                     style: kResultValueTextStyle,
                   ),
-                  Text(
-                    resultInterpretation,
-                    style: kResultDescriptionTextStyle,
-                    textAlign: TextAlign.center,
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      resultInterpretation,
+                      style: kResultDescriptionTextStyle,
+                      textAlign: TextAlign.center,
+                    ),
                   ),
                 ],
               ),
@@ -63,7 +63,7 @@ class ResultsPage extends StatelessWidget {
             ),
           ),
           BottomButton(
-            text: 'Re-calculate BMI',
+            text: 'CALCULATE AGAIN',
             onPress: () {
               Navigator.pop(context);
             },
