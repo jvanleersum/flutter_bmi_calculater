@@ -21,7 +21,7 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
-  late Gender selectedGender;
+  Gender? selectedGender;
   int height = 180;
   int weight = 70;
   int age = 35;
@@ -30,7 +30,10 @@ class _InputPageState extends State<InputPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('BMI CALCULATOR'),
+        title: Text(
+          'BMI CALCULATOR',
+          style: TextStyle(fontFamily: "FrancoisOne", fontSize: 25),
+        ),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -216,7 +219,7 @@ class _InputPageState extends State<InputPage> {
             ),
           ),
           BottomButton(
-              text: 'Calculate BMI',
+              text: 'CALCULATE MY BMI',
               onPress: () {
                 CalculatorBrain calc =
                     CalculatorBrain(height: height, weight: weight);

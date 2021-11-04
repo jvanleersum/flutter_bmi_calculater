@@ -19,10 +19,11 @@ const kLargeButtonTextStyle = TextStyle(
   color: Colors.white,
   fontSize: 20.0,
   fontWeight: FontWeight.bold,
+  fontFamily: "FrancoisOne",
 );
 
 const kResultLabelTextStyle = TextStyle(
-  fontSize: 22.0,
+  fontSize: 25.0,
   fontWeight: FontWeight.bold,
   color: Color(0xFF25C481),
 );
